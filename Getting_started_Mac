@@ -1,0 +1,43 @@
+#open your terminals
+#login to Chinook using secure shell (shh)
+
+ssh -Y uausername@chinook.alaska.edu
+#replacing uausername with your UA username (e.g. amwalker8) or the one provided for this exercise.
+# -Y flag is to enable graphical displays (R plots, etc.)
+
+#type in your UA password at the prompt or one provided for this exercise
+
+#test to see if graphics are enabled
+
+xeyes
+#if you don't have xquartz or similar software already downloaded on your personal
+#computer, you won't be able to see graphical displays
+
+#check what directory you are in
+
+pwd
+#should be in your home (/home/username)
+#this is where you install/access 3rd party software
+#10GB max
+
+#how much disk space is used in KB (8757640kb = 8.76 GB)
+du -s $HOME
+
+# go to filesystem where you get business done 
+
+cd $CENTER1
+
+#center1 is where you will run all of your jobs from (Mothur, R, etc.)
+#1 TB per project, but not backed up
+
+#go to the filesystem where you store all important files
+
+cd $ARCHIVE
+#1 TB per project
+#overtime data stored here will be stored offline
+
+#you can access official Chinook documentation here:
+
+https://uaf-rcs.gitbook.io/uaf-rcs-hpc-docs/hpc
+
+
