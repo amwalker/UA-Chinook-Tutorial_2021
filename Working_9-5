@@ -1,0 +1,70 @@
+#where do we launch jobs from?
+
+cd $CENTER
+
+#create a folder to do your job from
+
+mkdir R_test
+
+cd R_test
+
+#what software is provided in chinook
+
+module avail
+
+#what software is already loaded in your environment?
+
+module list
+
+#load the module you want to use
+
+module load 
+
+#check to see it is loaded
+
+module list
+
+pwd
+#/home/uausername/R_test
+
+R
+
+setwd("/home/uausername/R_test")
+
+install.packages("ggplot2")
+install.packages("ggridges")
+
+library(ggridges)
+library(ggplot2)
+ 
+# Diamonds dataset is provided by R natively
+#head(diamonds)
+ 
+# basic example
+diamond_dense=ggplot(diamonds, aes(x = price, y = cut, fill = cut)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none")
+  
+diamond_dense
+
+ggsave(file="diamond_dense.png")
+
+quit()
+
+#cp file to archive in background
+cp diamond_dense.png /archive/RCSCLASS/uaguest_rclass1 &
+#don't forget it is running in background
+
+tar
+
+transfer to computer:
+
+#you don't actually want to run code like this, you want to run it using jobs
+#interactive vs batch jobs
+
+#where can we do our jobs?
+https://uaf-rcs.gitbook.io/uaf-rcs-hpc-docs/using-batch/available-partitions
+
+
+#Interactive jobs
